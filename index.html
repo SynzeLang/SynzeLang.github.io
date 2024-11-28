@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Showcasing Synze - a simple interpreted programming language implemented in C++.">
+  <title>Synze Programming Language</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+<header class="header">
+  <h1 class="title">🌐 Synze</h1>
+  <p class="subtitle">A simple interpreted programming language implemented in C++.</p>
+</header>
+
+<main class="main-content">
+  <section class="section">
+    <h2>🛠️ About Synze</h2>
+    <p>
+      Synze provides basic programming constructs including variable declarations, mathematical operations, and string manipulation. Though flagged as malicious by VirusTotal and Microsoft Defender, Synze is entirely safe to use. Proceed at your discretion.
+    </p>
+  </section>
+
+  <section class="section">
+    <h2>🌟 Features</h2>
+    <ul>
+      <li>Variable declarations (string, number, boolean)</li>
+      <li>Basic arithmetic operations (+, -, *, /)</li>
+      <li>String concatenation</li>
+      <li>File execution support (.synze files)</li>
+      <li>Real-time command interpretation</li>
+      <li>Error handling and reporting</li>
+    </ul>
+  </section>
+
+  <section class="section">
+    <h2>🛠️ Building</h2>
+    <p>To build Synze, you need:</p>
+    <pre><code>CMake (3.5.0 or higher)
+C++ compiler with C++11 support</code></pre>
+    <pre><code>mkdir build
+cd build
+cmake ..
+cmake --build .</code></pre>
+  </section>
+
+  <section class="section">
+    <h2>🚀 Usage</h2>
+    <p>After building, you can run Synze in two ways:</p>
+    <ul>
+      <li><strong>Interactive Mode:</strong> <code>./Synze</code></li>
+      <li><strong>File Execution:</strong> <code>run example.synze</code></li>
+    </ul>
+  </section>
+
+  <section class="section">
+    <h2>📜 Syntax</h2>
+    <p>Below are some examples of Synze's syntax:</p>
+    <pre><code># Variable Declaration
+variable [name] = [value]
+
+# Output
+send [expression]
+
+# File Execution
+run [filename.synze]
+
+# Exit
+exit</code></pre>
+  </section>
+
+  <section class="section">
+    <h2>🧪 Examples</h2>
+    <h3>Declaring a Variable</h3>
+    <pre><code>variable message = "Hello, World!"
+send message</code></pre>
+    <h3>Performing Arithmetic</h3>
+    <pre><code>send 5 + 3 * 2</code></pre>
+    <h3>File Execution Example</h3>
+    <p>Create a file called <code>example.synze</code>:</p>
+    <pre><code>variable message = "File execution successful!"
+send message</code></pre>
+    <p>Then, run the file:</p>
+    <pre><code>run example.synze</code></pre>
+  </section>
+
+  <section class="section">
+    <h2>📖 License</h2>
+    <p>This project is open source and available under the <a href="https://mitlicense.org/" target="_blank">MIT License</a>.</p>
+  </section>
+</main>
+
+<footer class="footer">
+  <p>&copy; 2024 Synze Development Team</p>
+</footer>
+
+<script src="scripts.js"></script>
+</body>
+
+</html>
