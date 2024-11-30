@@ -68,12 +68,24 @@ let mouseX = 0;
 let mouseY = 0;
 let cursorX = 0;
 let cursorY = 0;
+let isCursorInitialized = false;
 
 const easing = 0.07;
+const cursor = document.getElementById('cursor');
+
 document.addEventListener("mousemove", (e) => {
     mouseX = e.clientX;
     mouseY = e.clientY;
-    cursor.classList.add('visible');
+
+    if (!isCursorInitialized) {
+        cursorX = mouseX;
+        cursorY = mouseY;
+
+        cursor.style.left = `${cursorX}px`;
+        cursor.style.top = `${cursorY}px`;
+        cursor.classList.add('visible');
+        isCursorInitialized = true;
+    }
 });
 
 function animateCursor() {
