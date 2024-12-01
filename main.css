@@ -16,6 +16,7 @@ html, body {
 }
 
 :root {
+    --title-color: #e0e0e0;
     --background-color: #19191c;
     --text-color: #e0e0e0;
     --hover-color: #ffffff;
@@ -27,20 +28,25 @@ html, body {
     --code-border: #404040;
     --footer-bg: #25252a;
     --footer-text-color: #e0e0e0;
+    --section-h2: #e0e0e0;
+    --subtitle: #8c8c8e;
 }
 
 .light-mode {
-    --background-color: #f5f5f5;
+    --title-color: #000000;
+    --background-color: #dcdcdc;
     --text-color: #19191c;
-    --hover-color: #000000;
-    --header-gradient: linear-gradient(120deg, #f7f7f9, #a3d5ff);
-    --link-bg: #d6d6d6;
+    --hover-color: #666666;
+    --header-gradient: linear-gradient(120deg, #dbdbe4, #79c2ff);
+    --link-bg: #c8c8c8;
     --link-hover-bg: #cccccc;
     --border-highlight: #3366ff;
     --code-bg: #f0f0f0;
     --code-border: #d6d6d6;
-    --footer-bg: #f7f7f9;
+    --footer-bg: #e6e6e6;
     --footer-text-color: #19191c;
+    --section-h2: #000000;
+    --subtitle: #626264;
 }
 
 body {
@@ -54,14 +60,10 @@ body {
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-p:hover, h1:hover, h2:hover, h3:hover, span:hover, a:hover {
+p:hover, h1:hover, h2:hover, h3:hover, span:hover, a:hover, section h2:hover {
     cursor: url('data:image/svg+xml,%3Csvg%20width%3D%2216px%22%20height%3D%2216px%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20stroke%3D%22%23000000%22%3E%3Cg%20id%3D%22SVGRepo_bgCarrier%22%20stroke-width%3D%220%22%3E%3C%2Fg%3E%3Cg%20id%3D%22SVGRepo_tracerCarrier%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3C%2Fg%3E%3Cg%20id%3D%22SVGRepo_iconCarrier%22%3E%3Cpath%20d%3D%22M21%2012C21%2016.9706%2016.9706%2021%2012%2021C7.02944%2021%203%2016.9706%203%2012C3%207.02944%207.02944%203%2012%203C16.9706%203%2021%207.02944%2021%2012Z%22%20stroke%3D%22%23818183%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3C%2Fpath%3E%3C%2Fg%3E%3C%2Fsvg%3E') 8 8, auto;
     color: var(--hover-color);
-    transition: color 0.2s ease-in-out, transform 0.2s ease-in-out;
-}
-
-.navbar a {
-    transition: box-shadow 0.3s, transform 0.3s;
+    transition: transform 0.2s ease-in-out;
 }
 
 .navbar a:hover, .link {
@@ -71,6 +73,49 @@ p:hover, h1:hover, h2:hover, h3:hover, span:hover, a:hover {
 .navbar a:hover {
     transform: scale(1.05);
     transition: transform 0.2s ease-in-out;
+}
+
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    overflow: hidden;
+    padding: 5px;
+    padding-inline: 10px;
+    background: #454545;
+    border-radius: 10px;
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    -webkit-transition: box-shadow 0.3s, left 0.3s, right 0.3s;
+}
+
+.navbar a:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    left: 51%;
+    right: 51%;
+    bottom: 0;
+    background: var(--border-highlight);
+    height: 4px;
+    -webkit-transition: left 0.4s ease-out, right 0.4s ease-out;
+    transition: left 0.4s ease-out, right 0.4s ease-out;
+}
+
+.navbar a:hover:before,
+.navbar a:focus:before,
+.navbar a:active:before {
+    left: 0;
+    right: 0;
+}
+
+.navbar a:hover,
+.navbar a:focus,
+.navbar a:active {
+    box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.5);
 }
 
 .container {
@@ -88,13 +133,14 @@ p:hover, h1:hover, h2:hover, h3:hover, span:hover, a:hover {
 }
 
 .title {
+    color: var(--title-color);
     font-size: 2.5rem;
     font-weight: 700;
     margin-bottom: 10px;
 }
 
 .subtitle {
-    color: #8c8c8e;
+    color: var(--subtitle);
     font-size: 1.2rem;
     font-weight: 400;
 }
@@ -144,10 +190,15 @@ p:hover, h1:hover, h2:hover, h3:hover, span:hover, a:hover {
 }
 
 .section h2 {
+    color: var(--section-h2);
     font-size: 1.8rem;
     margin-bottom: 10px;
     border-bottom: 4px solid var(--border-highlight);
     display: inline-block;
+}
+
+.section p, .section h3 {
+    padding-right: 0.1rem;
 }
 
 .feature-list {
